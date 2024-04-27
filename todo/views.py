@@ -4,7 +4,7 @@ from .forms import TodoItemForm
 
 def todo_list(request):
     todos = TodoItem.objects.all()
-    return render(request, 'todo_app/todo_list.html', {'todos': todos})
+    return render(request, 'todo/todo_list.html', {'todos': todos})
 
 def todo_create(request):
     if request.method == 'POST':
@@ -14,7 +14,7 @@ def todo_create(request):
             return redirect('todo_list')
     else:
         form = TodoItemForm()
-    return render(request, 'todo_app/todo_create.html', {'form': form})
+    return render(request, 'todo/todo_create.html', {'form': form})
 
 def todo_update(request, todo_id):
     todo = get_object_or_404(TodoItem, id=todo_id)
@@ -25,14 +25,14 @@ def todo_update(request, todo_id):
             return redirect('todo_list')
     else:
         form = TodoItemForm(instance=todo)
-    return render(request, 'todo_app/todo_update.html', {'form': form, 'todo': todo})
+    return render(request, 'todo/todo_update.html', {'form': form, 'todo': todo})
 
 def todo_delete(request, todo_id):
     todo = get_object_or_404(TodoItem, id=todo_id)
     if request.method == 'POST':
         todo.delete()
         return redirect('todo_list')
-    return render(request, 'todo_app/todo_delete.html', {'todo': todo})
+    return render(request, 'todo/todo_delete.html', {'todo': todo})
     
 def management_view(request):
     todos = TodoItem.objects.all()
