@@ -33,3 +33,7 @@ def todo_delete(request, todo_id):
         todo.delete()
         return redirect('todo_list')
     return render(request, 'todo_app/todo_delete.html', {'todo': todo})
+    
+def management_view(request):
+    todos = TodoItem.objects.all()
+    return render(request, 'todo_management.html', {'todos': todos})
