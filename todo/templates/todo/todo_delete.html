@@ -1,1 +1,21 @@
-<a href="{% url 'todo_create' %}">Add New Todo</a>
+<!-- todo_delete.html -->
+{% extends 'base.html' %}
+
+{% block title %}Delete Todo{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <h2>Delete Todo</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Are you sure you want to delete "{{ todo.title }}"?</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
