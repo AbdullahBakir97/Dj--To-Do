@@ -1,18 +1,37 @@
-<!-- todo_app/templates/todo_app/todo_list.html -->
+<!-- todo_list.html -->
 {% extends 'base.html' %}
 
+{% block title %}Todo List{% endblock %}
+
 {% block content %}
-<h1>Todo List</h1>
-<ul>
-    {% for todo in todos %}
-    <li>
-        {{ todo.title }}
-        <form action="{% url 'todo_delete' todo.id %}" method="post">
-            {% csrf_token %}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-    {% endfor %}
-</ul>
-<a href="{% url 'todo_create' %}">Create Todo</a>
+    <div class="row">
+        <div class="col">
+            <h2>Todo List</h2>
+        </div>
+    </div>
+    <a href="{% url 'todo_create' %}">Add New Todo</a>
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Completed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for todo in todos %}
+                        <tr>
+                            <td>{{ todo.title }}</td>
+                            <td>{{ todo.completed }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="2">No todo items yet.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
