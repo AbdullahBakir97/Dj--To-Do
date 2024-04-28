@@ -2,13 +2,13 @@ from django.contrib import admin
 from .models import TodoItem
 
 class TodoItemAdmin(admin.ModelAdmin):
-    list_display = ('title', 'completed', 'created_at')
+    list_display = ('title', 'description', 'completed', 'created_at')
     list_filter = ('completed', 'created_at')
     search_fields = ('title',)
     date_hierarchy = 'created_at'
     fieldsets = (
         (None, {
-            'fields': ('title', 'completed')
+            'fields': ('title', 'description', 'completed')
         }),
         ('Advanced Options', {
             'classes': ('collapse',),

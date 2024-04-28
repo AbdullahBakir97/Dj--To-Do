@@ -5,12 +5,12 @@
 
 {% block content %}
     <div class="row">
-        <div class="col mb-2">
+        <div class="col mb-3">
             <h2>Todo List</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col mb-2">
+        <div class="col mb-3">
             <a href="{% url 'todo_create' %}" class="btn btn-success rounded-pill">Add New Todo</a>
         </div>
     </div>
@@ -20,6 +20,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Title</th>
+                        <th scope="col">Description</th>
                         <th scope="col">Completed</th>
                     </tr>
                 </thead>
@@ -27,6 +28,7 @@
                     {% for todo in todos %}
                         <tr>
                             <td>{{ todo.title }}</td>
+                            <td>{{ todo.description }}</td>
                             <td>{{ todo.completion_status_icon }}</td>
                         </tr>
                     {% empty %}
