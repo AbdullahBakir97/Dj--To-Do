@@ -5,11 +5,15 @@
 
 {% block content %}
     <div class="row">
-        <div class="col">
+        <div class="col mb-2">
             <h2>Todo List</h2>
         </div>
     </div>
-    <a href="{% url 'todo_create' %}">Add New Todo</a>
+    <div class="row">
+        <div class="col mb-2">
+            <a href="{% url 'todo_create' %}" class="btn btn-success rounded-pill">Add New Todo</a>
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             <table class="table">
@@ -23,7 +27,7 @@
                     {% for todo in todos %}
                         <tr>
                             <td>{{ todo.title }}</td>
-                            <td>{{ todo.completed }}</td>
+                            <td>{{ todo.completion_status_icon }}</td>
                         </tr>
                     {% empty %}
                         <tr>

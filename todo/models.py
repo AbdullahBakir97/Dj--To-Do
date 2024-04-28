@@ -7,3 +7,10 @@ class TodoItem(models.Model):
 
     def __str__(self):
         return self.title 
+
+    @property
+    def completion_status_icon(self):
+        if self.completed:
+            return "✓" 
+        else:
+            return "❌"

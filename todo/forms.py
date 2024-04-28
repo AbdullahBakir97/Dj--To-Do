@@ -13,11 +13,17 @@ class TodoItemForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter title'}),
             'completed': forms.CheckboxInput(attrs={'class': 'form-check-input'})
         }
-
+        error_messages = {
+            
+            'title': {
+                'required': 'Title is required.',
+                'min_length': 'Title must be at least 3 characters long.'
+            }
+        }
     def clean_title(self):
         title = self.cleaned_data.get('title')
-        if len(title) < 5:
-            raise forms.ValidationError("Title must be at least 5 characters long.")
+        if len(title) < 3:
+            raise forms.ValidationError("Title must be at least 3 characters long.")
         return title
 
     def clean_completed(self):

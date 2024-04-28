@@ -13,6 +13,13 @@
         <div class="col">
             <form method="post">
                 {% csrf_token %}
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        {% for field, errors in form.errors.items %}
+                            <strong>{{ field }}</strong>: {{ errors|join:", " }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" class="form-control" id="title" name="title" value="{{ todo.title }}">
@@ -21,7 +28,7 @@
                     <input type="checkbox" class="form-check-input" id="completed" name="completed" {% if todo.completed %}checked{% endif %}>
                     <label class="form-check-label" for="completed">Completed</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-primary rounded-pill">Update</button>
             </form>
         </div>
     </div>
