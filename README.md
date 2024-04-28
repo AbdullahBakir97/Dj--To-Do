@@ -1,4 +1,5 @@
 # Django Todo App
+![2024-04-28](https://github.com/AbdullahBakir97/Dj--To-Do/assets/127149804/4c188d23-6571-4f79-b52b-193860835d5f)
 
 ## Overview
 
@@ -28,7 +29,7 @@ This Django Todo App is a simple web application that allows users to create, ma
 1. *Clone the repository to your local machine*:
 
 ```
-git clone <[repository-url](https://github.com/AbdullahBakir97/Dj--To-Do)>
+git clone https://github.com/AbdullahBakir97/Dj--To-Do
 ```
 2. *Navigate to the project directory*
 ```
