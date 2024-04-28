@@ -1,6 +1,7 @@
 # Django Todo App
 ![2024-04-28 (5)](https://github.com/AbdullahBakir97/Dj--To-Do/assets/127149804/2b5ad633-2a3e-4da4-bf2e-4e1d7b291f5e)
-![2024-04-28 (6)](https://github.com/AbdullahBakir97/Dj--To-Do/assets/127149804/fce56ce9-ad76-41c0-9187-be391b00158f)
+![2024-04-28 (6)](https://github.com/AbdullahBakir97/Dj--To-Do/assets/127149804/f18ca986-1da7-4e54-b0e0-26231960356f)
+
 
 
 ## Overview
